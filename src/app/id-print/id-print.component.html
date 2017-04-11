@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-xs-6" *ngFor="let participant of participants">
+    <img src="/src/assets/Images/{{participant.seating}}.jpg" alt="">
+    <div class="reg">
+      Reg ID: <span>{{participant.id}}</span>
+    </div>
+    <div class="name">
+      <div class="row">
+        <div class="firstName">
+         <strong>{{participant.firstName[0] | uppercase }}</strong><span>{{participant.firstName | slice:1:participant.firstName.length | uppercase}}</span>
+        </div>
+        <div class="lastName">
+         <strong>{{participant.lastName[0] | uppercase }}</strong><span>{{participant.lastName | slice:1:participant.firstName.length | uppercase}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

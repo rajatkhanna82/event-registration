@@ -6,9 +6,21 @@
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style media="print">
+   @media print {
+      body {
+        display:table;
+        table-layout:fixed;
+        padding-top:2.5cm;
+        padding-bottom:2.5cm;
+        height:auto;
+      }
+    }
+  </style>
 </head>
-<body>
+<body >
   <app-root>Loading...</app-root>
 </body>
 </html>

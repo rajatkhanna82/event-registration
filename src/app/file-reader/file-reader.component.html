@@ -1,0 +1,15 @@
+<div class="container">
+
+  <h3>Upload CSV file</h3>
+  <form class="form-inline">
+    <div class="form-group">
+      <input type="file" (change)="fileChangeEvent($event)" class="form-control" placeholder="Upload file..." />
+      <button type="button" class="btn btn-primary" (click)="upload()">Upload</button>
+    </div>
+    <a class="btn btn-default" *ngFor="let category of categoryList " (click)="print(category)">
+      Print ID of {{category}}
+    </a>
+
+  </form>
+
+</div>

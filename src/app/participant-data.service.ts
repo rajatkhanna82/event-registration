@@ -7,10 +7,13 @@ export class ParticipantDataService {
   constructor() { }
 
   createParticipantObj(val) {
+    let name = val.Name.split(' ');
+    let firstName = name[0];
+    let lastName = name.length > 2 ? name.slice(1,name.length).join(' '): name[1];
+
     return {
-      firstName: val.Name.split(' ')[0],
-      lastName : val.Name.split(' ')[1],
-      email: val.EMail,
+      firstName: firstName,
+      lastName : lastName,
       seating: val.Seating,
       id: val.ID,
       txnId: val.TxnId,
@@ -19,8 +22,18 @@ export class ParticipantDataService {
   }
 
   setParticipantData (data) {
-    this.participants = data.map((val)=>{
-      return this.createParticipantObj(val);
+    data.forEach((val)=>{
+       this.participants.push(this.createParticipantObj(val));
+    });
+  }
+
+  deleteParticipantData () {
+    this.participants.splice(0, this.participants.length);
+  }
+
+  appendToParticipantData (data) {
+    data.forEach(val => {
+      this.participants.push(this.createParticipantObj(val));
     });
   }
 

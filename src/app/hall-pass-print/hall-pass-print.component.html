@@ -1,18 +1,23 @@
-<div class="row">
-  <div class="col-xs-6" *ngFor="let participant of participants">
-    <img src="/src/assets/Images/.jpg" alt="">
-    <div class="reg">
-      Reg ID: <span>{{participant.id}}</span>
-    </div>
-    <div class="name">
-      <div class="row">
-        <div class="firstName">
-          <span>{{participant.firstName}}</span>
-        </div>
-        <div class="lastName">
-          <span>{{participant.lastName}}</span>
+<div class="body" *ngFor="let page of pages">
+  <div class="card" *ngFor="let participant of participantsOfPage(page)">
+    <div class="content">
+      <div class="name">
+        <div class="firstName" #firstName>
+          <span
+            [fittext]="true"
+            [activateOnResize]="false"
+            [container]="firstName">
+            {{participant.firstName[0] | uppercase}}{{participant.firstName | slice:1:participant.firstName.length | lowercase}} {{participant.lastName[0] | uppercase}}{{participant.lastName | slice:1:participant.lastName.length |lowercase }}
+            </span>
         </div>
       </div>
+      <div class="reg">
+       {{participant.id}}
+      </div>
+      <div class="qrCode" #box>
+          <qr-code [value]="textForQRCode(participant)" [size]="75" [canvas]="true"></qr-code>
+      </div>
     </div>
+    <img src="assets/Images/ProgramPassDay{{day}}_{{participant.seating}}.jpg" alt="">
   </div>
 </div>

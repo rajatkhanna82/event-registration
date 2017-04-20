@@ -12,10 +12,23 @@ img {
 
 }
 
-.row {
+.body {
+   width : 100vw;
    margin-left: 0px !important;
    margin-right: 0px !important;
+}
 
+.card{
+   width: 50vw ;
+   /*height: 100%;*/
+   float: left;
+
+}
+
+.content{
+   position: absolute;
+   height: 100%;
+   width: 50vw;
 }
 .reg {
    position: absolute;
@@ -27,29 +40,33 @@ img {
 .name {
    position: absolute;
     top: 9vw;
-    margin-left: 10vw;
-    margin-right: 15vw;
+    width: 40vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
 
 .firstName {
-   font-size: 6.5vw;
-   line-height: 6.5vw;
-   font-family: "Times New Roman", Georgia, Serif;
+   width: 40vw;
+   font-size: 9.5vw;
+   font-weight: 900;
+   line-height: 9.5vw;
+   font-family: 'Fira Sans', sans-serif;;
    text-align:center;
 
 }
-.firstName > strong {
+.firstName > b {
    font-size: 8.6vw;
-   line-height: 8.6vw;
-
 }
 .lastName {
    font-size: 4vw;
+   width: 40vw;
    line-height: 4vw;
-   font-family: "Times New Roman", Georgia, Serif;
+   font-family: 'Fira Sans', sans-serif;;
    text-align:center;
+   white-space: nowrap;
+   margin: auto;
 }
-.lastName > strong {
+.lastName > b {
    font-size: 5vw;
    line-height: 5vw;
 

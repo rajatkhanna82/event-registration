@@ -4,12 +4,57 @@
   <form class="form-inline">
     <div class="form-group">
       <input type="file" (change)="fileChangeEvent($event)" class="form-control" placeholder="Upload file..." />
-      <button type="button" class="btn btn-primary" (click)="upload()">Upload</button>
+      <button type="button"
+        class="btn btn-primary"
+        (click)="upload(false)"
+        [disabled]="filesToUpload.length === 0" >
+        Upload
+      </button>
+      <button type="button"
+        class="btn btn-primary"
+        (click)="addMoreData()"
+        [disabled]="
+          filesToUpload.length === 0 ||
+          participants.length === 0 ">
+        Add More</button>
+      <button type="button"
+        class="btn btn-danger"
+        (click)="removeData()"
+        [disabled]="participants.length === 0">Remove Data</button>
+
     </div>
-    <a class="btn btn-default" *ngFor="let category of categoryList " (click)="print(category)">
-      Print ID of {{category}}
-    </a>
+    <div class="row" *ngFor="let category of categoryList ">
+      <a class="btn btn-default"  (click)="print(category)">
+        Print ID of {{category}}
+      </a>
+      <a class="btn btn-default" *ngFor="let day of [1,2] " (click)="printHallEntryPass(category, day)">
+        Print ID of {{category}} for Day {{day}}
+      </a>
+    </div>
 
   </form>
+
+  <table class="table" *ngIf="participants.length > 0">
+      <thead>
+        <th>Reg Id </th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Seating</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let participant of participants">
+          <td>{{participant.id}}</td>
+          <td>
+           {{participant.firstName[0] | uppercase}}{{participant.firstName | slice:1:participant.firstName.length }}
+          </td>
+          <td>
+             {{participant.lastName[0] | uppercase}}{{participant.lastName | slice:1:participant.lastName.length }}
+          </td>
+          <td>
+            {{participant.seating}}
+          </td>
+        </tr>
+      </tbody>
+  </table>
 
 </div>

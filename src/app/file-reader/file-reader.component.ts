@@ -10,6 +10,7 @@ import { Router } from "@angular/router";
 export class FileReaderComponent {
    categoryList: any;
    filesToUpload: Array<File>;
+   participants: any[];
 
    constructor(
       private participantService : ParticipantDataService,
@@ -17,14 +18,30 @@ export class FileReaderComponent {
       this.filesToUpload = [];
   }
 
-  upload() {
+  ngOnInit() {
+    this.participants = this.participantService.getAllParticipants();
+    this.categoryList = this.participantService.getListOfCategories();
+
+  }
+
+  removeData() {
+    this.participantService.deleteParticipantData();
+  }
+
+  addMoreData () {
+    this.upload(true);
+  }
+
+  upload(addMore: boolean) {
     this.readCSV(this.filesToUpload).then((result) => {
       var array = this.csvToArray(result);
-      // var arrayFormatado = this.formatarResultado(array);
-      // console.log(arrayFormatado);
-      this.participantService.setParticipantData(array);
+      if(addMore) {
+        this.participantService.appendToParticipantData(array);
+      } else {
+        this.participantService.setParticipantData(array);
+      }
       this.categoryList = this.participantService.getListOfCategories();
-      console.log(array);
+      console.log(this.participants);
 
     }, (error) => {
       console.error(error);
@@ -74,7 +91,12 @@ export class FileReaderComponent {
   }
 
   print(cat) {
-     this.router.navigate(['/print'], {queryParams: {category: cat}});
+     this.router.navigate(['/printId'], {queryParams: {category: cat}});
+  }
+
+  printHallEntryPass(cat, day) {
+     this.router.navigate(['/printHallEntry'], {queryParams: {category: cat, day: day}});
+
   }
 
 }

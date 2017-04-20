@@ -1,3 +1,5 @@
+import { HallPassPrintComponent } from './hall-pass-print/hall-pass-print.component';
+import { SharedModule } from './shared/shared.module';
 import { ROUTES } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -9,7 +11,7 @@ import { FileReaderComponent } from './file-reader/file-reader.component';
 import { IdPrintComponent } from './id-print/id-print.component';
 import { RouterModule } from "@angular/router";
 import { ParticipantDataService } from './participant-data.service';
-import { HallPassPrintComponent } from './hall-pass-print/hall-pass-print.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { HallPassPrintComponent } from './hall-pass-print/hall-pass-print.compon
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES)
+    SharedModule,
+    RouterModule.forRoot(ROUTES, { useHash: true })
   ],
   providers: [ParticipantDataService],
   bootstrap: [AppComponent]

@@ -14,10 +14,10 @@
       <div class="reg">
        {{participant.id}}
       </div>
-      <div class="qrCode" #box>
+      <div class="qrCode" #box *ngIf="participant.id !== ''">
           <qr-code [value]="textForQRCode(participant)" [size]="75" [canvas]="true"></qr-code>
       </div>
     </div>
-    <img src="assets/Images/ProgramPassDay{{day}}_{{participant.seating}}.jpg" alt="">
+    <img src="assets/Images/{{day}}_IE_{{participant.seating}}.jpg" alt="">
   </div>
 </div>

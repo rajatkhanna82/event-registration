@@ -16,7 +16,7 @@ sub: Subscription;
    qrSize: number = 100;
    pages: number[];
    maxInPage: number = 8;
-   dates: string[] = ['20170429', '20170430'];
+   dates: string[] = ['20171014', '20171015'];
 
 
    constructor(
@@ -51,9 +51,9 @@ sub: Subscription;
       let codeText = {
          id: participant.id,
          day: this.day,
-         date: this.dates[+this.day-1],
+         date: this.dates[0],
          firstName: participant.firstName,
-         LastName: participant.lastName
+         lastName: participant.lastName
       }
       return  JSON.stringify(codeText);
    }

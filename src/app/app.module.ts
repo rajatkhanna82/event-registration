@@ -11,6 +11,7 @@ import { FileReaderComponent } from './file-reader/file-reader.component';
 import { IdPrintComponent } from './id-print/id-print.component';
 import { RouterModule } from "@angular/router";
 import { ParticipantDataService } from './participant-data.service';
+import { LuggageIdComponent } from './luggage-id/luggage-id.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ParticipantDataService } from './participant-data.service';
     AppComponent,
     FileReaderComponent,
     IdPrintComponent,
-    HallPassPrintComponent
+    HallPassPrintComponent,
+    LuggageIdComponent
   ],
   imports: [
     BrowserModule,

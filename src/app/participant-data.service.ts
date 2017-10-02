@@ -7,17 +7,11 @@ export class ParticipantDataService {
   constructor() { }
 
   createParticipantObj(val) {
-    let name = val.Name.split(' ');
-    let firstName = name[0];
-    let lastName = name.length > 2 ? name.slice(1,name.length).join(' '): name[1];
-
-    return {
-      firstName: firstName,
-      lastName : lastName,
+     return {
+      firstName: val.firstName || '',
+      lastName : val.lastName || '',
       seating: val.Seating,
-      id: val.ID,
-      txnId: val.TxnId,
-      venueId: val['Venue Id']
+      id: val.ID || ''
     }
   }
 

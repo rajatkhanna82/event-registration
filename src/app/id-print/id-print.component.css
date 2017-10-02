@@ -22,6 +22,7 @@ img {
    width: 50vw ;
    /*height: 100%;*/
    float: left;
+   border: black solid 0.1vw;
 
 }
 
@@ -33,7 +34,7 @@ img {
 .reg {
    position: absolute;
    top: 3.4vw;
-   right: 3.5vw;
+   left: 33.5vw;
    font-size: 2vw;
 }
 

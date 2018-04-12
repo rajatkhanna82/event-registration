@@ -16,7 +16,7 @@ sub: Subscription;
    qrSize: number = 100;
    pages: number[];
    maxInPage: number = 8;
-   dates: string[] = ['20180421', '20180422'];
+   dates: string[] = ['20180505', '20180506'];
 
 
    constructor(

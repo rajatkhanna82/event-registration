@@ -6,7 +6,8 @@
           <span
             [fittext]="true"
             [activateOnResize]="false"
-            [container]="firstName">
+            [container]="firstName"
+            >
             {{participant.firstName[0] | uppercase}}{{participant.firstName | slice:1:participant.firstName.length | lowercase}} {{participant.lastName[0] | uppercase}}{{participant.lastName | slice:1:participant.lastName.length |lowercase }}
             </span>
         </div>
@@ -18,6 +19,6 @@
           <qr-code [value]="textForQRCode(participant)" [size]="75" [canvas]="true"></qr-code>
       </div>
     </div>
-    <img src="assets/Images/{{day}}_IE_{{participant.seating}}.jpg" alt="">
+    <img src="assets/Images/{{day}}_{{participant.seating}}.jpg" alt="">
   </div>
 </div>

@@ -1,9 +1,15 @@
-<div class="body" *ngFor="let page of pages">
-  <div  *ngFor="let participant of participantsOfPage(page); let i = index">
+<div class="body">
+  <div  *ngFor="let participant of participants; let i = index">
     <div class="card">
       <div class="content">
+        <div class="group" *ngIf="participant.group">
+          {{participant.group}}
+        </div>
         <div class="reg">
-          Reg ID: <span>{{participant.id}}</span>
+          ID: <span>{{participant.id}}</span>
+        </div>
+        <div class="stay">
+          {{participant.stay}}
         </div>
         <div class="name" #name >
             <div class="firstName" #firstName>
@@ -11,7 +17,7 @@
                 [fittext]="true"
                 [activateOnResize]="false"
                 [container]="firstName"
-                [minFontSize]="5.5">
+                [minFontSize]="4.4">
                 {{participant.firstName | uppercase}}
                 </div>
             </div>

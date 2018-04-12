@@ -27,9 +27,12 @@
       <a class="btn btn-default"  (click)="print(category)">
         Print ID of {{category}}
       </a>
-      <a class="btn btn-default" *ngFor="let day of ['programpass', 'reentrypass'] " (click)="printHallEntryPass(category, day)">
+      <a class="btn btn-default" *ngFor="let day of ['ProgramPassDay1', 'ProgramPassDay2', 'ReEntryPass'] " (click)="printHallEntryPass(category, day)">
         Print ID of {{category}} for {{day}}
       </a>
+    </div>
+    <div class="row">
+
     </div>
 
   </form>

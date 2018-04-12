@@ -7,9 +7,11 @@ export class ParticipantDataService {
   constructor() { }
 
   createParticipantObj(val) {
+    const firstName = val.Name.substr(0,val.Name.indexOf(' ')),
+      lastName = val.Name.substr(val.Name.indexOf(' ') + 1);
      return {
-      firstName: val.firstName || '',
-      lastName : val.lastName || '',
+      firstName: firstName || '',
+      lastName : lastName || '',
       seating: val.Seating,
       id: val.ID || ''
     }

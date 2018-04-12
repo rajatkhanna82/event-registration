@@ -1,8 +1,10 @@
 {
   "projects": {
     "default": "isha-event-registration",
-    "staging": "eventscheckin-9550f",
+    "staging": "megaprogramtags",
     "ishaEventsTags": "eventscheckin-9550f",
-    "ishaProgramTags": "megaprogramtags"
+    "ishaProgramTags": "megaprogramtags",
+    "a": "megaprogramtags",
+    " s": "megaprogramtags"
   }
 }

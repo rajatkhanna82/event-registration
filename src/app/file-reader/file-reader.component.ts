@@ -71,11 +71,11 @@ export class FileReaderComponent {
     var result = [];
 
     var headers = lines[0].split(",");
+    console.log("here : ", headers);
 
     for (var i = 1; i < lines.length; i++) {
       var obj = {};
       var currentline = lines[i].split(",");
-
       for (var j = 0; j < headers.length; j++) {
         obj[headers[j]] = currentline[j];
       }
@@ -90,8 +90,8 @@ export class FileReaderComponent {
     return array.filter(line => line !== "");
   }
 
-  print(cat) {
-     this.router.navigate(['/printId'], {queryParams: {category: cat}});
+  print(card) {
+     this.router.navigate(['/'+card]);
   }
 
   printHallEntryPass(cat, day) {

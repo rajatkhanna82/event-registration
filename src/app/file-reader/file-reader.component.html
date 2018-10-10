@@ -23,12 +23,11 @@
         [disabled]="participants.length === 0">Remove Data</button>
 
     </div>
-    <div class="row" *ngFor="let category of categoryList ">
-      <a class="btn btn-default"  (click)="print(category)">
-        Print ID of {{category}}
-      </a>
-      <a class="btn btn-default" *ngFor="let day of ['programpass', 'reentrypass'] " (click)="printHallEntryPass(category, day)">
-        Print ID of {{category}} for {{day}}
+    <div class="row" >
+
+      <a class="btn btn-default" *ngFor="let card of ['NameTag','ProgramPass', 'LuggageTag', 'Valuables'] "
+        (click)="print(card)">
+        Print {{card}}
       </a>
     </div>
 
@@ -39,20 +38,28 @@
         <th>Reg Id </th>
         <th>First Name</th>
         <th>Last Name</th>
-        <th>Seating</th>
+        <!-- <th>Lodge Name</th> -->
+        <!-- <th>Room</th> -->
+        <!-- <th>Lodge Bed Number</th> -->
       </thead>
       <tbody>
         <tr *ngFor="let participant of participants">
-          <td>{{participant.id}}</td>
+          <td>{{participant.BSPID}}</td>
           <td>
-           {{participant.firstName[0] | uppercase}}{{participant.firstName | slice:1:participant.firstName.length }}
+           {{participant.FirstName[0] | uppercase}}{{participant.FirstName | slice:1:participant.FirstName.length }}
           </td>
           <td>
-             {{participant.lastName[0] | uppercase}}{{participant.lastName | slice:1:participant.lastName.length }}
+             {{participant.LastName[0] | uppercase}}{{participant.LastName | slice:1:participant.LastName.length }}
+          </td>
+          <!-- <td>
+            {{participant.LodgeName}}
           </td>
           <td>
-            {{participant.seating}}
+            {{participant.Room}}
           </td>
+          <td>
+            {{participant.LodgeBedNumber}}
+          </td> -->
         </tr>
       </tbody>
   </table>

@@ -3,7 +3,7 @@
     <div class="card">
       <div class="content">
         <div class="reg">
-          Reg ID: <span>{{participant.id}}</span>
+          Reg ID: <span>{{participant.BSPID}}</span>
         </div>
         <div class="name" #name >
             <div class="firstName" #firstName>
@@ -12,7 +12,7 @@
                 [activateOnResize]="false"
                 [container]="firstName"
                 [minFontSize]="5.5">
-                {{participant.firstName | uppercase}}
+                {{participant.FirstName | uppercase}}
                 </div>
             </div>
             <div class="lastName" #lastName>
@@ -21,7 +21,7 @@
                 [activateOnResize]="false"
                 [container]="lastName">
                 <!--{{master.style.fontSize}}-->
-                {{participant.lastName | uppercase}}
+                {{participant.LastName | uppercase}}
               </div>
             </div>
             <!--<div class="lastName">
@@ -29,7 +29,7 @@
             </div>-->
         </div>
       </div>
-      <img src="assets/Images/{{participant.seating}}.jpg" alt="">
+      <img src="assets/Images/NameTag_{{participant.category}}.jpg" alt="">
     </div>
   </div>
 </div>

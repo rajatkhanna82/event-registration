@@ -7,11 +7,19 @@ export class ParticipantDataService {
   constructor() { }
 
   createParticipantObj(val) {
+
+    console.log(val);
      return {
-      firstName: val.firstName || '',
-      lastName : val.lastName || '',
-      seating: val.Seating,
-      id: val.ID || ''
+      category: val.BSPID.substr(0, 1) === 'V' ? 'vol' : 'part',
+      FirstName: val.FirstName,
+      LastName : val.LastName,
+      Sex: val.Sex,
+      LodgeName: val.LodgeName,
+      ID: val.ID || '',
+      BSPID: val.BSPID,
+      Room: val.Room,
+      LodgeBedNumber: val.LodgeBedNumber,
+      ContactID: val.ContactID
     }
   }
 

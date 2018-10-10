@@ -1,3 +1,4 @@
+import { ValuablesPrintComponent } from './valuables-print/valuables-print.component';
 import { HallPassPrintComponent } from './hall-pass-print/hall-pass-print.component';
 import { SharedModule } from './shared/shared.module';
 import { ROUTES } from './app.routes';
@@ -20,6 +21,7 @@ import { LuggageIdComponent } from './luggage-id/luggage-id.component';
     FileReaderComponent,
     IdPrintComponent,
     HallPassPrintComponent,
+    ValuablesPrintComponent,
     LuggageIdComponent
   ],
   imports: [

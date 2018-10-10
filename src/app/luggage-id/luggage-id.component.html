@@ -1,0 +1,23 @@
+<div class="body" *ngFor="let page of pages">
+  <div class="card" *ngFor="let participant of participantsOfPage(page)">
+    <div class="content">
+      <div class="title"> Bedding Tag </div>
+      <div class="reg">
+       {{participant.category  === 'part'? 'Participant' : 'Volunteer'}} - {{participant.Sex}} - {{participant.BSPID}}
+      </div>
+      <div class="name">
+        <div class="firstName" #firstName>
+          <span
+            [fittext]="true"
+            [activateOnResize]="false"
+            [minFontSize]="4"
+            [container]="firstName">
+            {{participant.FirstName[0] | uppercase}}{{participant.FirstName | slice:1:participant.FirstName.length | lowercase}} {{participant.LastName[0] | uppercase}}{{participant.LastName | slice:1:participant.LastName.length |lowercase }}
+            </span>
+        </div>
+      </div>
+
+    </div>
+    <img src="assets/Images/LuggageTag.jpg" alt="">
+  </div>
+</div>

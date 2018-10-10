@@ -26,8 +26,8 @@ sub: Subscription;
       private el: ElementRef
    ) { }
    ngAfterViewInit() {
-     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-     //Add 'implements AfterViewInit' to the class.
+     //Called after ngAfterContentInit when the component's view has been initialized.
+     //Applies to components only. Add 'implements AfterViewInit' to the class.
      console.log(this.el);
    }
    ngOnInit() {
@@ -48,14 +48,11 @@ sub: Subscription;
    }
 
    textForQRCode(participant) {
-      let codeText = {
-         id: participant.id,
-         day: this.day,
-         date: this.dates[0],
-         firstName: participant.firstName,
-         lastName: participant.lastName
+      let qrCode = {
+         participantID: participant.ID,
+         contactID: participant.ContactID
       }
-      return  JSON.stringify(codeText);
+      return  JSON.stringify(qrCode);
    }
 
 

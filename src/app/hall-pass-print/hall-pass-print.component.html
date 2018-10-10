@@ -7,17 +7,17 @@
             [fittext]="true"
             [activateOnResize]="false"
             [container]="firstName">
-            {{participant.firstName[0] | uppercase}}{{participant.firstName | slice:1:participant.firstName.length | lowercase}} {{participant.lastName[0] | uppercase}}{{participant.lastName | slice:1:participant.lastName.length |lowercase }}
+            {{participant.FirstName[0] | uppercase}}{{participant.FirstName | slice:1:participant.FirstName.length | lowercase}} {{participant.LastName[0] | uppercase}}{{participant.LastName | slice:1:participant.LastName.length |lowercase }}
             </span>
         </div>
       </div>
       <div class="reg">
-       {{participant.id}}
+       {{participant.BSPID}}
       </div>
-      <div class="qrCode" #box *ngIf="participant.id !== ''">
+      <div class="qrCode" #box *ngIf="participant.ID !== ''">
           <qr-code [value]="textForQRCode(participant)" [size]="75" [canvas]="true"></qr-code>
       </div>
     </div>
-    <img src="assets/Images/{{day}}_IE_{{participant.seating}}.jpg" alt="">
+    <img src="assets/Images/ProgramPass.jpg" alt="">
   </div>
 </div>

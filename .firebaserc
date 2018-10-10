@@ -1,8 +1,5 @@
 {
   "projects": {
-    "default": "isha-event-registration",
-    "staging": "eventscheckin-9550f",
-    "ishaEventsTags": "eventscheckin-9550f",
-    "ishaProgramTags": "megaprogramtags"
+    "default": "bspnametags"
   }
 }

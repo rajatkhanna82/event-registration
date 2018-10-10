@@ -1,0 +1,23 @@
+<div class="body" *ngFor="let page of pages">
+  <div class="card" *ngFor="let participant of participantsOfPage(page)">
+    <div class="content">
+      <div class="reg">
+       {{participant.BSPID}}
+      </div>
+      <div class="name">
+        <div class="firstName" #firstName>
+          <span
+            [fittext]="true"
+            [activateOnResize]="false"
+            [container]="firstName">
+            {{participant.FirstName[0] | uppercase}}{{participant.FirstName | slice:1:participant.FirstName.length | lowercase}} {{participant.LastName[0] | uppercase}}{{participant.LastName | slice:1:participant.LastName.length |lowercase }}
+            </span>
+        </div>
+      </div>
+      <div class="qrCode" #box *ngIf="participant.ID !== ''">
+          <qr-code [value]="textForQRCode(participant)" [size]="75" [canvas]="true"></qr-code>
+      </div>
+    </div>
+    <img src="assets/Images/Valuables.jpg" alt="">
+  </div>
+</div>

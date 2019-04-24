@@ -13,6 +13,7 @@ import { IdPrintComponent } from './id-print/id-print.component';
 import { RouterModule } from "@angular/router";
 import { ParticipantDataService } from './participant-data.service';
 import { LuggageIdComponent } from './luggage-id/luggage-id.component';
+import { BeddingTagComponent } from './bedding-tag/bedding-tag.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { LuggageIdComponent } from './luggage-id/luggage-id.component';
     IdPrintComponent,
     HallPassPrintComponent,
     ValuablesPrintComponent,
-    LuggageIdComponent
+    LuggageIdComponent,
+    BeddingTagComponent
   ],
   imports: [
     BrowserModule,

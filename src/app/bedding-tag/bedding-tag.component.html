@@ -1,0 +1,36 @@
+<div class="body" *ngFor="let page of pages">
+  <div  *ngFor="let participant of participantsOfPage(page); let i = index">
+    <div class="card">
+      <div class="content">
+        <div class="title"> Bedding Tag </div>
+        <div class="reg">
+          Reg ID: <span>{{participant.BSPID}}</span>
+        </div>
+        <div class="name" #name >
+            <div class="firstName" #firstName>
+              <div #master
+                [fittext]="true"
+                [activateOnResize]="false"
+                [container]="firstName"
+                [minFontSize]="5.5">
+                {{participant.FirstName | uppercase}}
+                </div>
+            </div>
+            <div class="lastName" #lastName>
+              <div
+                [fittext]="true"
+                [activateOnResize]="false"
+                [container]="lastName">
+                <!--{{master.style.fontSize}}-->
+                {{participant.LastName | uppercase}}
+              </div>
+            </div>
+            <!--<div class="lastName">
+            <strong>{{participant.lastName[0] | uppercase }}</strong>{{participant.lastName | slice:1:participant.firstName.length | uppercase}}
+            </div>-->
+        </div>
+      </div>
+      <img src="assets/Images/NameTag_{{participant.category}}.jpg" alt="">
+    </div>
+  </div>
+</div>

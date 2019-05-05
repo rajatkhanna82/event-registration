@@ -12,7 +12,7 @@
                 [activateOnResize]="false"
                 [container]="firstName"
                 [minFontSize]="5.5">
-                {{participant.FirstName | uppercase}}
+                <span class="firstLetter">{{participant.FirstName[0]}}</span>{{participant.FirstName.slice(1) | uppercase}}
                 </div>
             </div>
             <div class="lastName" #lastName>
@@ -21,7 +21,7 @@
                 [activateOnResize]="false"
                 [container]="lastName">
                 <!--{{master.style.fontSize}}-->
-                {{participant.LastName | uppercase}}
+                <span class="firstLetter">{{participant.LastName[0]}}</span>{{participant.LastName.slice(1) | uppercase}}
               </div>
             </div>
             <!--<div class="lastName">

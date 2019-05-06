@@ -1,12 +1,13 @@
 import { ParticipantDataService } from './../participant-data.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from "rxjs/Subscription";
 
 @Component({
   selector: 'app-id-print',
   templateUrl: './id-print.component.html',
-  styleUrls: ['./id-print.component.css']
+  styleUrls: ['./id-print.component.css'],
+  encapsulation: ViewEncapsulation.None  
 })
 export class IdPrintComponent implements OnInit {
    sub: Subscription;
@@ -46,7 +47,13 @@ export class IdPrintComponent implements OnInit {
    participantsOfPage(page) {
      return this.participants.slice(page * 6, (page+1)*6);
    }
-
+   textForQRCode(participant) {
+    let qrCode = {
+       participantID: participant.ID,
+       contactID: participant.ContactID
+    }
+    return  JSON.stringify(qrCode);
+ }
 
 
 }

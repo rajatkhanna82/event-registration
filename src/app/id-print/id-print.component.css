@@ -27,12 +27,14 @@ img {
 }
 
 
-.qrCode {
+qr-code > img {
    /* width: 10vw; */
-   width: 9vw;
-   height: 9vw;
+    background-color: aqua;
+
+   width: 10.3vw;
+   height: 10.3vw;
    position: absolute;
-   top: 18.6vw;
+   top: 24.7vw;
    left: 2.1vw;
 }
 

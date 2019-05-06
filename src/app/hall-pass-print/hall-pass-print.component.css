@@ -21,6 +21,7 @@ qr-code:first-child {
 
 .qrCode {
     /* width: 10vw; */
+    background-color: aqua;
     width: 9vw;
     height: 9vw;
     position: absolute;

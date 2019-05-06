@@ -1,8 +1,8 @@
-<div class="body" *ngFor="let page of pages">
-  <div class="card" *ngFor="let participant of participantsOfPage(page)">
-    <div class="content">
-      <div class="name">
-        <div class="firstName" #firstName>
+<div class="bodyHP" *ngFor="let page of pages">
+  <div class="cardHP" *ngFor="let participant of participantsOfPage(page)">
+    <div class="contentHP">
+      <div class="nameHP">
+        <div class="firstNameHP" #firstName>
           <span
             [fittext]="true"
             [activateOnResize]="false"
@@ -11,11 +11,11 @@
             </span>
         </div>
       </div>
-      <div class="reg">
+      <div class="regHP">
        {{participant.BSPID}}
       </div>
-      <div class="qrCode" #box *ngIf="participant.ID !== ''">
-          <qr-code [value]="textForQRCode(participant)" [size]="75" [canvas]="true"></qr-code>
+      <div class="qrCodeHP" #box *ngIf="participant.ID !== ''">
+          <qr-code [value]="textForQRCode(participant)" [size]="150" ></qr-code>
       </div>
     </div>
     <img src="assets/Images/ProgramPass.jpg" alt="">

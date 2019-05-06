@@ -1,12 +1,13 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
-import { Component, OnInit, ViewChildren, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, ElementRef, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { ParticipantDataService } from '../participant-data.service';
 
 @Component({
   selector: 'app-hall-pass-print',
   templateUrl: './hall-pass-print.component.html',
-  styleUrls: ['./hall-pass-print.component.css']
+  styleUrls: ['./hall-pass-print.component.css'],
+  encapsulation: ViewEncapsulation.None 
 })
 export class HallPassPrintComponent implements OnInit, AfterViewInit {
 sub: Subscription;
